@@ -3,7 +3,7 @@ import { posts } from '#site/content';
 import PostItem from '@/components/post-item';
 import { sortPosts } from '@/lib/utils';
 
-const BlogPage = async () => {
+const BlogListPage = async () => {
   const sortedPosts = sortPosts(posts.filter((post) => post.published));
   const displayPosts = sortedPosts;
 
@@ -41,5 +41,5 @@ const BlogPage = async () => {
   );
 };
 
-export default BlogPage;
+export default BlogListPage;
 
