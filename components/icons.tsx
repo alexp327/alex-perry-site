@@ -10,11 +10,11 @@ export const Icons = {
       fill='#000000'
       {...props}
     >
-      <g id='SVGRepo_bgCarrier' stroke-width='0'></g>
+      <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
       <g
         id='SVGRepo_tracerCarrier'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       ></g>
       <g id='SVGRepo_iconCarrier'>
         <path d='M489.472 227.328h61.44v61.44h-61.44z' fill='#009944'></path>
