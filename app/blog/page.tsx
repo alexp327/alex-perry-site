@@ -3,6 +3,12 @@ import { posts } from '#site/content';
 import PostItem from '@/components/post-item';
 import { sortPosts } from '@/lib/utils';
 import QueryPagination from '@/components/query-pagination';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Test description',
+};
 
 const POSTS_PER_PAGE = 5;
 
