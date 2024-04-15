@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Alex Perry - Dev',
-  url: 'https://example.com',
+  url: 'https://alex-perry-site.vercel.app',
   description: 'Nextjs 14 blog using velite, tailwind, and shadcn',
   author: 'Alex Perry',
   links: {
@@ -10,3 +10,4 @@ export const siteConfig = {
 };
 
 export type SiteConfig = typeof siteConfig;
+
