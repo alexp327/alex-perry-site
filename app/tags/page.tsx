@@ -3,9 +3,10 @@ import { Metadata } from 'next';
 import React from 'react';
 import { posts } from '#site/content';
 import Tag from '@/components/tag';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Tags',
+  title: 'Tags' + ` | ${siteConfig.name}`,
   description: "Topics I've written about",
 };
 

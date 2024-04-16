@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Tag from '@/components/tag';
 import { slug } from 'github-slugger';
 import { Metadata } from 'next';
+import { siteConfig } from '@/config/site';
 
 interface TagPageProps {
   params: {
@@ -18,7 +19,11 @@ export async function generateMetadata({
 }: TagPageProps): Promise<Metadata> {
   const { tag } = params;
   return {
-    title: tag,
+    title:
+      'Tag: ' +
+      tag.charAt(0).toUpperCase() +
+      tag.slice(1) +
+      ` | ${siteConfig.name}`,
     description: `Posts on the topic of ${tag}`,
   };
 }

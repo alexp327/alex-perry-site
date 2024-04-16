@@ -6,9 +6,10 @@ import QueryPagination from '@/components/query-pagination';
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Tag from '@/components/tag';
+import { siteConfig } from '@/config/site';
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Blog | ' + siteConfig.name,
   description: 'Test description',
 };
 

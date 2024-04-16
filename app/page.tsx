@@ -17,8 +17,8 @@ export default function Home() {
             Hello, I&apos;m Alex
           </h1>
           <p className='max-w-[42rem] mx-auto text-muted-foreground sm:text-xl text-balance'>
-            Welcome to my blog template. Built using tailwind, shadcn, velite,
-            and nextjs 14.
+            Welcome to my blog. Built using tailwind, shadcn/ui, velite, and
+            Nextjs 14.
           </p>
           <div className='flex flex-col gap-4 justify-center sm:flex-row'>
             <Link
