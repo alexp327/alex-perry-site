@@ -3,7 +3,7 @@ import { siteConfig } from '@/config/site';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Me' + ` | ${siteConfig.name}`,
+  title: `${siteConfig.name} | ` + 'About Me',
   description: 'Information about me',
 };
 
@@ -13,7 +13,7 @@ const AboutPage = () => {
       <div className='flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8'>
         <div className='flex-1 space-x-4'>
           <h1 className='inline-block font-black text-4xl lg:text-5xl'>
-            About Me
+            📷 About Me
           </h1>
         </div>
       </div>
@@ -32,10 +32,16 @@ const AboutPage = () => {
           </p>
         </div>
         <p className='text-muted-foreground text-lg py-4'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi sit
-          exercitationem illum omnis modi sapiente debitis! Aliquid
-          reprehenderit quis libero impedit dignissimos eius consequatur,
-          consectetur sit debitis repellat quam id.
+          I am a software developer with a passion for building things that live
+          on the internet. I achieved my Bachelor of Science in Computer Science
+          from Purdue University in 2022, and have been working as a software
+          developer ever since. I have experience with web frameworks such as
+          React and Angular, as well as backend development with Node.js and
+          .NET. I am always looking to grow my skillset and share what I learn
+          along the way.
+          <br />
+          <br />
+          Outside of work, I enjoy playing video games, music, and tennis.
         </p>
       </div>
     </div>
