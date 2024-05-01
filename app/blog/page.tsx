@@ -7,6 +7,8 @@ import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Tag from '@/components/tag';
 import { siteConfig } from '@/config/site';
+import Link from 'next/link';
+import { badgeVariants } from '@/components/ui/badge';
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Blog`,
@@ -46,6 +48,15 @@ const BlogListPage = async ({ searchParams }: BlogPageProps) => {
       <div className='space-y-2 mt-6'>
         <p className='text-muted-foreground'>Topics</p>
         <div className='flex flex-wrap gap-2'>
+          <Link
+            className={badgeVariants({
+              variant: 'default',
+              className: 'no-underline rounded-md',
+            })}
+            href={`/blog`}
+          >
+            all ({sortedTags.length ?? null})
+          </Link>
           {sortedTags.map((tag) => (
             <Tag key={tag} tag={tag} count={tags[tag]} />
           ))}
