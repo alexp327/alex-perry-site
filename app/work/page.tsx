@@ -21,36 +21,36 @@ const WorkPage = () => {
       <hr className='my-8' />
       <div className='flex flex-col gap-8 items-center md:items-start'>
         <WorkItem
-          title='Pediatric Shoulder Pain Rating Tool'
-          description='this is a brief description'
+          title='Shoulder Pain Rating Tool'
+          description={`The Shoulder Pain Rating Tool is a web application used to assist medical staff in assessing wheelchair users\' pain using a questionnaire created by myself and Indiana University's Skills on Wheels program.`}
           image='pediatric-pain-tool.png'
           priorityImg={true}
-          tags={['tag1', 'react']}
-          href='https://google.com'
-        />
-        <WorkItem
-          title='TweePT3'
-          description='this is yet another brief description. I wanted to include 2 sentences here to test out formatting'
-          image='tweept3.jpg'
-          priorityImg={true}
-          tags={['tag1']}
-          href='https://google.com'
-        />
-        <WorkItem
-          title='Shell'
-          description='this is yet another brief description. I wanted to include 2 sentences here to test out formatting'
-          image='bo3.jpg'
-          priorityImg={true}
-          tags={['tag1']}
-          href='https://google.com'
+          tags={[
+            'Angular',
+            'Docker',
+            'Node.js',
+            'Material UI',
+            'Reactive Forms',
+          ]}
+          href='https://pediatric-pain-rater-40aa3.web.app/'
+          github='https://github.com/alexp327/pediatric-pain-rater'
         />
         <WorkItem
           title='Personal Site (this one!)'
-          description='this is yet another brief description. I wanted to include 2 sentences here to test out formatting'
-          image='bo3.jpg'
+          description={`alexperry.dev is my personal site where I blog about what I'm learning and showcase my work. I love experimenting with new technologies and this site is a playground for that.`}
+          image='personal-site.png'
           priorityImg={true}
-          tags={['tag1']}
-          href='https://google.com'
+          tags={['Next.js', 'Tailwind CSS', 'Vercel', 'SSR']}
+          href='https://alexperry.dev'
+          github='https://github.com/alexp327/alex-perry-site'
+        />
+        <WorkItem
+          title='TweePT3'
+          description={`TweePT3 is a Chrome extension that integrates ChatGPT with Twitter to generate tweets based on a user\'s input. It uses the OpenAI API to generate the tweets.`}
+          image='tweept3.jpg'
+          priorityImg={true}
+          tags={['ChatGPT', 'RESTful API', 'Chrome Extension', 'JavaScript']}
+          github='https://github.com/alexp327/tweept3'
         />
       </div>
     </div>
