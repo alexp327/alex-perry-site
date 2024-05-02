@@ -61,7 +61,7 @@ const WorkItem = ({
                 variant='ghost'
                 size='icon'
               >
-                <Icons.gitHub />
+                <Icons.gitHub className='w-full h-full' />
               </Button>
             </a>
           ) : null}
