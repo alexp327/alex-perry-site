@@ -39,5 +39,8 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "velite": "^0.2.2"
+  },
+  "overrides": {
+    "@babel/runtime": "7.24.4"
   }
 }
