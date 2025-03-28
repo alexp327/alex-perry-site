@@ -21,6 +21,23 @@ const WorkPage = () => {
       <hr className='my-8' />
       <div className='flex flex-col gap-8 items-center md:items-start'>
         <WorkItem
+          title='What Should I Listen To?'
+          description={`This web app uses the OpenAI and LastFM APIs to give album recommendations based off of the words the user selects.`}
+          image='wsilt.png'
+          priorityImg={true}
+          tags={[
+            'Next.js',
+            'Tailwind CSS',
+            'TypeScript',
+            'shadcn/ui',
+            'OpenAI API',
+            'LastFM API',
+            'Vercel',
+            'Docker',
+          ]}
+          href='https://what-should-i-listen-to.vercel.app/'
+        />
+        <WorkItem
           title='Shoulder Pain Rating Tool'
           description={`The Shoulder Pain Rating Tool is a web application used to assist medical staff in assessing wheelchair users\' pain using a questionnaire created by myself and Indiana University's Skills on Wheels program.`}
           image='pediatric-pain-tool.png'
