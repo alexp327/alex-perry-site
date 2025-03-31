@@ -40,7 +40,7 @@ export default defineConfig({
       [
         rehypePrettyCode,
         {
-          theme: 'github-dark',
+          theme: 'one-dark-pro',
         },
       ],
       [

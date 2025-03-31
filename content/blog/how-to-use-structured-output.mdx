@@ -1,0 +1,87 @@
+---
+title: Using Structured Output with the OpenAI API
+description: Overview of my experience using the structured output feature of OpenAI's API
+date: 2025-03-31
+tags: ['AI', 'APIs']
+published: true
+---
+
+Using the OpenAI API is fairly straightforward considering how well documented it is on [their docs page](https://platform.openai.com/docs/overview). One thing that I struggled with when making my new ChatGPT-integrated web app was structured output.
+
+Structured output guarantees an AI model's output will follow a specific format. This can be critical in applications that utilize ChatGPT output and display specific items or further modify the response, and don't just strictly output the raw text response. For example, my application [What Should I Listen To](https://what-should-i-listen-to.vercel.app/) retrieves a list of album suggestions from ChatGPT, and then uses another API to get other metadata about the album before displaying the suggestions to the user. I require the AI response to explicitly return strings in an array so that the functions I perform on the data to extract the title, artist, and description work on 100% of the time.
+
+### How to Use Structured Output
+
+Structured Responses require the developer to provide a JSON Schema with their response creation API call. A schema defines the data types and format of the JSON object returned by the AI model. I learned more about creating a JSON schema using [this json-schema.org resource](https://json-schema.org/learn/getting-started-step-by-step).
+
+Additionally, when using the 'Responses' API (as opposed to the 'Chat Completions'), the docs make it seem like you can use a zod object schema. I tried this as I think zod schemas are more intuitive, but this does **NOT** work. You must use a JSON schema like the one shown below.
+
+The response should always follow the same structure and data types defined in the schema. This makes it easy to reliably use the data returned by OpenAI models.
+
+##### Structured Output Usage Example API Call
+
+```ts
+const response = await openai.responses.create({
+  model: 'gpt-4o-mini',
+  instructions:
+    'You are a music guru that knows about all genres, styles, and eras of music, popular and niche. When prompted with a series of comma-separated words, you provide 4 albums that match the descriptors. The suggested albums should include the artist, title, and a brief description of album. The albums should be from different artists.',
+  input: descriptors,
+  text: {
+    format: {
+      type: 'json_schema',
+      strict: true,
+      name: 'album_suggestions',
+      schema: {
+        additionalProperties: false,
+        type: 'object',
+        properties: {
+          album_suggestions: {
+            type: 'array',
+            items: {
+              type: 'object',
+              additionalProperties: false,
+              properties: {
+                artist: { type: 'string' },
+                title: { type: 'string' },
+                description: { type: 'string' },
+              },
+              required: ['artist', 'title', 'description'],
+            },
+          },
+        },
+        required: ['album_suggestions'],
+      },
+    },
+  },
+});
+```
+
+##### Structured Output Usage Example API Response
+
+```json
+{
+  "album_suggestions": [
+    {
+      "artist": "Run-D.M.C.",
+      "title": "Run-D.M.C.",
+      "description": "This landmark self-titled debut album from 1984 helped bring hip-hop into the mainstream, blending rap with rock elements, and features iconic tracks like 'It's Like That'."
+    },
+    {
+      "artist": "The Cure",
+      "title": "Seventeen Seconds",
+      "description": "Released in 1980, this album is a hallmark of post-punk and minimalist soundscapes, filled with atmospheric tracks embodying nostalgia and introspection."
+    },
+    {
+      "artist": "Kraftwerk",
+      "title": "Computer World",
+      "description": "This 1986 album showcases the electronic side of synth music, incorporating elements of jazz and minimalism, while exploring themes of technology and modern life."
+    },
+    {
+      "artist": "Miles Davis",
+      "title": "Tutu",
+      "description": "A fusion of jazz and electronic elements, this 1986 album reflects a minimalist approach with lush synths, making it a nostalgic journey through Davis's groundbreaking sound."
+    }
+  ]
+}
+```
+
