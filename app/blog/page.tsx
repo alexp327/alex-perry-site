@@ -37,7 +37,7 @@ const BlogListPage = async ({ searchParams }: BlogPageProps) => {
   const sortedTags = sortTagsByCount(tags);
 
   return (
-    <div className='container max-w-6xl py-6 lg:py-10'>
+    <div className='container min-w-6xl py-6 lg:py-10'>
       <div className='flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8'>
         <div className='flex-1 space-y-4'>
           <h1 className='inline-block font-black text-4xl lg:text-5xl'>
@@ -45,8 +45,8 @@ const BlogListPage = async ({ searchParams }: BlogPageProps) => {
           </h1>
         </div>
       </div>
-      <div className='space-y-2 mt-6'>
-        <p className='text-muted-foreground'>Topics</p>
+      <div className='max-w-4xl mx-auto space-y-2 mt-6'>
+        <p className='text-foreground/75'>Topics</p>
         <div className='flex flex-wrap gap-2'>
           <Link
             className={badgeVariants({
@@ -62,7 +62,7 @@ const BlogListPage = async ({ searchParams }: BlogPageProps) => {
           ))}
         </div>
       </div>
-      <div className='flex flex-col gap-3 mt-6'>
+      <div className='max-w-4xl mx-auto flex flex-col gap-3 mt-6'>
         <hr />
         {displayPosts?.length > 0 ? (
           <ul className='flex flex-col'>

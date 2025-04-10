@@ -24,7 +24,7 @@ const WorkItem = ({
   github,
 }: WorkItemProps) => {
   return (
-    <article className='flex flex-col-reverse md:flex-row rounded-md bg-muted w-full overflow-hidden min-h-80'>
+    <article className='flex flex-col-reverse md:flex-row rounded-md w-full bg-accent overflow-hidden min-h-80'>
       <div className='flex flex-col w-full md:w-1/2 p-8 justify-between'>
         <div>
           <h3 className='text-xl md:text-2xl font-bold'>{title}</h3>
@@ -34,7 +34,7 @@ const WorkItem = ({
                 <li
                   key={tag}
                   className={badgeVariants({
-                    variant: 'default',
+                    variant: 'secondary',
                     className: 'no-underline rounded-md hover:bg-primary',
                   })}
                 >
@@ -43,7 +43,7 @@ const WorkItem = ({
               );
             })}
           </ul>
-          <p className='mt-6 text-muted-foreground'>{description}</p>
+          <p className='mt-6 text-foreground/75'>{description}</p>
         </div>
         <div className='mt-6 flex gap-2'>
           {href ? (

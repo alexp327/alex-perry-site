@@ -82,7 +82,7 @@ const PostPage = async ({ params }: PostPageProps) => {
         ))}
       </div>
       {post.description ? (
-        <p className='text-xl mt-0 text-muted-foreground'>{post.description}</p>
+        <p className='text-lg mt-0 text-foreground/75'>{post.description}</p>
       ) : null}
       <hr className='my-4' />
       <MDXContent code={post.body} />

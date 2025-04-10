@@ -27,7 +27,7 @@ const PostItem = ({ slug, title, description, date, tags }: PostItemProps) => {
         ))}
       </div>
       {/* TODO: fix text directly in div lol */}
-      <div className='max-w-none text-muted-foreground'>{description}</div>
+      <div className='max-w-none text-foreground/75'>{description}</div>
       <div className='flex justify-between items-center'>
         <dl>
           <dt className='sr-only'>Published On</dt>
