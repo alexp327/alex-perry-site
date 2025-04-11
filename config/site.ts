@@ -6,6 +6,7 @@ export const siteConfig = {
   links: {
     twitter: 'https://twitter.com/pezvstheworld',
     github: 'https://github.com/alexp327',
+    linkedin: 'https://www.linkedin.com/in/alexperry317/',
   },
 };
 

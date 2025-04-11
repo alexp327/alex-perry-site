@@ -33,7 +33,7 @@ const MainNav = () => {
       >
         Work
       </Link>
-      <Link
+      {/* <Link
         href='/about'
         className={cn(
           'text-sm font-medium transition-colors hover:text-primary hidden sm:inline-block',
@@ -41,7 +41,7 @@ const MainNav = () => {
         )}
       >
         About
-      </Link>
+      </Link> */}
     </nav>
   );
 };

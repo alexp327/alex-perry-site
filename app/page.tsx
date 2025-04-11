@@ -5,9 +5,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { posts } from '#site/content';
 import PostItem from '@/components/post-item';
+import {
+  Code,
+  Database,
+  ExternalLink,
+  FileCode,
+  GitBranch,
+  GitGraph,
+  Layers,
+  Palette,
+  SquareCode,
+  Wind,
+} from 'lucide-react';
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import TechCard from '@/components/tech-card';
 
 export default function Home() {
-  const latestsPosts = sortPosts(posts).slice(0, 5);
+  const latestsPosts = sortPosts(posts).slice(0, 3);
 
   return (
     <>
@@ -17,13 +36,18 @@ export default function Home() {
       <section className='pb-8 pt-6 md:pb-12 md:mt-10'>
         <div className='container flex flex-col md:flex-row justify-around'>
           <div className='flex-1 flex flex-col gap-4 text-center md:text-left h-fit my-auto'>
-            <h1 className='text-4xl md:text-5xl lg:text-6xl font-black text-balance'>
-              Hello, I&apos;m Alex
+            <h2 className='text-xl md:text-2xl lg:text-3xl text-foreground/75 text-balance'>
+              Hey! I&apos;m Alex,
+            </h2>
+            <h1 className='text-2xl md:text-3xl lg:text-4xl font-semibold  text-balance'>
+              a software developer based in Indianapolis.
             </h1>
-            <p className='max-w-[42rem] text-foreground/75 sm:text-lg'>
-              I&apos;m a dedicated software developer, showcasing my projects
-              and sharing insights on technology and what I&apos;m learning
-              through blog posts.
+            <p className='max-w-[42rem] text-foreground/75'>
+              I&apos;m currently focused on building scalable, data-driven
+              applications at L3Harris Technologies. With a background in
+              full-stack development and a product-focused mindset, I bring both
+              technical depth and a passion for practical innovation—whether at
+              the enterprise level or through independent projects.
             </p>
             <div className='flex gap-4 justify-center md:justify-start flex-col sm:flex-row'>
               <Link
@@ -51,10 +75,10 @@ export default function Home() {
           <div className='flex-1 w-full flex justify-center items-center relative'>
             {/* Glow circles */}
             <div className='absolute left-[10%] top-[10%] h-40 w-40 rounded-full bg-purple-500/70 blur-3xl' />
-            <div className='absolute bottom-[7%] right-[11%] h-32 w-32 rounded-full bg-pink-500/70 blur-3xl' />
-            <div className='absolute bottom-[5%] left-[15%] h-40 w-40 rounded-full bg-blue-500/70 blur-3xl' />
-            <div className='absolute right-[5%] top-[10%] h-36 w-36 rounded-full bg-cyan-500/70 blur-3xl' />
-            <div className='absolute right-[40%] top-[40%] h-36 w-36 rounded-full bg-orange-500/70 blur-3xl' />
+            <div className='absolute bottom-[7%] right-[11%] h-44 w-44 rounded-full bg-pink-500/70 blur-3xl' />
+            <div className='absolute bottom-[5%] left-[7%] h-52 w-52 rounded-full bg-blue-500/70 blur-3xl' />
+            <div className='absolute right-[5%] top-[10%] h-44 w-44 rounded-full bg-cyan-500/70 blur-3xl' />
+            <div className='absolute right-[40%] top-[40%] h-32 w-32 rounded-full bg-orange-500/70 blur-3xl' />
             <Image
               src='/hero-image.png'
               alt=''
@@ -65,9 +89,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='container max-w-4xl py-6 lg:py-10 flex flex-col space-y-6 mt-48'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-center'>
-          Latest Posts
+      <section className='container py-6 lg:py-10 flex flex-col space-y-6 mt-48'>
+        <h2 className='text-2xl text-foreground/60 font-semibold'>
+          Latest Blog Posts
         </h2>
         <ul className='flex flex-col'>
           {latestsPosts.map((post) => (
@@ -82,6 +106,65 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </section>
+      <section className='container py-6 lg:py-10 flex flex-col space-y-6'>
+        <h4 className='text-2xl text-foreground/60 font-semibold'>
+          Let&apos;s Connect
+        </h4>
+        <div className='flex gap-4 flex-wrap'>
+          <Link
+            href={'mailto:alex.perry422@gmail.com'}
+            className='flex items-center gap-2 hover:opacity-85'
+          >
+            Email <ExternalLink className='w-5 h-5' />
+          </Link>
+          <Link
+            href={siteConfig.links.linkedin}
+            target='_blank'
+            className='flex items-center gap-2 hover:opacity-85'
+          >
+            LinkedIn <ExternalLink className='w-5 h-5' />
+          </Link>
+          <Link
+            href={siteConfig.links.twitter}
+            target='_blank'
+            className='flex items-center gap-2 hover:opacity-85'
+          >
+            Twitter <ExternalLink className='w-5 h-5' />
+          </Link>
+          <Link
+            href={siteConfig.links.github}
+            target='_blank'
+            className='flex items-center gap-2 hover:opacity-85'
+          >
+            Github <ExternalLink className='w-5 h-5' />
+          </Link>
+        </div>
+      </section>
+      <section className='container py-6 lg:py-10 flex flex-col space-y-6'>
+        <h4 className='text-2xl text-foreground/60 font-semibold'>Skills</h4>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch'>
+          <TechCard
+            icon={<Code className='h-6 w-6' />}
+            title='JavaScript'
+            description='Strong JS/TS knowledge for advanced web development'
+          />
+          <TechCard
+            icon={<SquareCode className='h-6 w-6' />}
+            title='React'
+            description='Building fast and efficient React and Next.js apps'
+          />
+          <TechCard
+            icon={<GitBranch className='h-6 w-6' />}
+            title='Git'
+            description='DevOps tool for streamlined source code management'
+          />
+          <TechCard
+            icon={<Wind className='h-6 w-6' />}
+            title='TailwindCSS'
+            description='A utility-first and widely used frontend CSS framework'
+          />
+        </div>
       </section>
     </>
   );

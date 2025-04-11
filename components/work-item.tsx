@@ -35,7 +35,7 @@ const WorkItem = ({
                   key={tag}
                   className={badgeVariants({
                     variant: 'secondary',
-                    className: 'no-underline rounded-md hover:bg-primary',
+                    className: 'no-underline rounded-md text-foreground/80',
                   })}
                 >
                   {tag}
@@ -43,7 +43,7 @@ const WorkItem = ({
               );
             })}
           </ul>
-          <p className='mt-6 text-foreground/75'>{description}</p>
+          <p className='mt-6 text-foreground'>{description}</p>
         </div>
         <div className='mt-6 flex gap-2'>
           {href ? (

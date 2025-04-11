@@ -38,7 +38,7 @@ export default function RootLayout({
         <Providers>
           <div className='relative flex min-g-dvh flex-col bg-background'>
             <SiteHeader />
-            <main className='w-full flex-1 max-w-6xl mx-auto'>{children}</main>
+            <main className='w-full flex-1 max-w-5xl mx-auto'>{children}</main>
             <SiteFooter />
           </div>
         </Providers>
