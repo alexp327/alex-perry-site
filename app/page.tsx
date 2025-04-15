@@ -25,6 +25,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import TechCard from '@/components/tech-card';
+import WorkItem from '@/components/work-item';
 
 export default function Home() {
   const latestsPosts = sortPosts(posts).slice(0, 3);
@@ -108,7 +109,10 @@ export default function Home() {
           ))}
         </ul>
       </section>
-      <section className='container py-6 lg:py-10 flex flex-col space-y-6'>
+      <section
+        id='connect'
+        className='container py-6 lg:py-10 flex flex-col space-y-6'
+      >
         <h4 className='text-2xl text-foreground/60 font-semibold'>
           Let&apos;s Connect
         </h4>
@@ -141,6 +145,63 @@ export default function Home() {
             Github <ExternalLink className='w-5 h-5' />
           </Link>
         </div>
+      </section>
+      <section
+        id='work'
+        className='container py-6 lg:py-10 flex flex-col gap-8 items-center md:items-start'
+      >
+        <h4 className='text-2xl text-foreground/60 font-semibold'>
+          Recent Work
+        </h4>
+        <WorkItem
+          title='What Should I Listen To?'
+          description={`This web app uses the OpenAI and LastFM APIs to give album recommendations based off of the words the user selects.`}
+          image='wsilt.png'
+          priorityImg={true}
+          tags={[
+            'Next.js',
+            'Tailwind CSS',
+            'TypeScript',
+            'shadcn/ui',
+            'OpenAI API',
+            'LastFM API',
+            'Vercel',
+            'Docker',
+          ]}
+          href='https://what-should-i-listen-to.vercel.app/'
+        />
+        <WorkItem
+          title='Shoulder Pain Rating Tool'
+          description={`The Shoulder Pain Rating Tool is a web application used to assist medical staff in assessing wheelchair users\' pain using a questionnaire created by myself and Indiana University's Skills on Wheels program.`}
+          image='pediatric-pain-tool.png'
+          priorityImg={true}
+          tags={[
+            'Angular',
+            'Docker',
+            'Node.js',
+            'Material UI',
+            'Reactive Forms',
+          ]}
+          href='https://pediatric-pain-rater-40aa3.web.app/'
+          github='https://github.com/alexp327/pediatric-pain-rater'
+        />
+        <WorkItem
+          title='Personal Site (this one!)'
+          description={`alexperry.dev is my personal site where I blog about what I'm learning and showcase my work. I love experimenting with new technologies and this site is a playground for that.`}
+          image='personal-site.png'
+          priorityImg={true}
+          tags={['Next.js', 'Tailwind CSS', 'Vercel', 'SSR']}
+          href='https://alexperry.dev'
+          github='https://github.com/alexp327/alex-perry-site'
+        />
+        <WorkItem
+          title='TweePT3'
+          description={`TweePT3 is a Chrome extension that integrates ChatGPT with Twitter to generate tweets based on a user\'s input. It uses the OpenAI API to generate the tweets.`}
+          image='tweept3.jpg'
+          priorityImg={true}
+          tags={['ChatGPT', 'RESTful API', 'Chrome Extension', 'JavaScript']}
+          github='https://github.com/alexp327/tweept3'
+        />
       </section>
       <section className='container py-6 lg:py-10 flex flex-col space-y-6'>
         <h4 className='text-2xl text-foreground/60 font-semibold'>Skills</h4>
