@@ -14,6 +14,7 @@ import {
   GitGraph,
   Layers,
   Palette,
+  Smartphone,
   SquareCode,
   Wind,
 } from 'lucide-react';
@@ -143,26 +144,36 @@ export default function Home() {
       </section>
       <section className='container py-6 lg:py-10 flex flex-col space-y-6'>
         <h4 className='text-2xl text-foreground/60 font-semibold'>Skills</h4>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch'>
           <TechCard
             icon={<Code className='h-6 w-6' />}
-            title='JavaScript'
-            description='Strong JS/TS knowledge for advanced web development'
+            title='Full Stack Development'
+            description='Proficient in React, Next.js, Angular, Node.js, and ASP.NET for building scalable web apps'
           />
           <TechCard
             icon={<SquareCode className='h-6 w-6' />}
-            title='React'
-            description='Building fast and efficient React and Next.js apps'
+            title='AI & Cloud Integration'
+            description='Deployed ChatGPT-powered chatbots and serverless apps using AWS and Microsoft Azure'
           />
           <TechCard
             icon={<GitBranch className='h-6 w-6' />}
-            title='Git'
-            description='DevOps tool for streamlined source code management'
+            title='DevOps & Automation'
+            description='Skilled with Git, CI/CD, Selenium, and Blue Prism for streamlining development and operations'
           />
           <TechCard
             icon={<Wind className='h-6 w-6' />}
-            title='TailwindCSS'
-            description='A utility-first and widely used frontend CSS framework'
+            title='Frontend Tooling'
+            description='Expertise in TailwindCSS, TypeScript, responsive UI design, and component-based architecture'
+          />
+          <TechCard
+            icon={<Database className='h-6 w-6' />}
+            title='Backend & Databases'
+            description='Experience with SQL, Postgres, MongoDB, REST APIs, and designing scalable backend systems'
+          />
+          <TechCard
+            icon={<Smartphone className='h-6 w-6' />}
+            title='Mobile App Development'
+            description='Built cross-platform mobile apps using Flutter and Flask with cloud-connected backends'
           />
         </div>
       </section>
