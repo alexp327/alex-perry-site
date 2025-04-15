@@ -14,18 +14,18 @@ const SiteFooter = () => {
             href='mailto:alex.perry422@gmail.com'
           >
             <span className='sr-only'>Email</span>
-            <Mail className='w-6 h-6' />
+            <Mail className='w-5 h-5' />
           </a>
           <a target='_blank' rel='noreferrer' href={siteConfig.links.twitter}>
             <span className='sr-only'>Twitter</span>
-            <Icons.twitter className='w-6 h-6' />
+            <Icons.twitter className='w-5 h-5' />
           </a>
           <a target='_blank' rel='noreferrer' href={siteConfig.links.github}>
             <span className='sr-only'>GitHub</span>
-            <Icons.gitHub className='w-6 h-6' />
+            <Icons.gitHub className='w-5 h-5' />
           </a>
         </div>
-        <div className='mb-2 flex space-x-2 text-sm text-muted-foreground'>
+        <div className='mb-2 flex space-x-2 text-sm text-foreground/75'>
           <p>Alex Perry</p>
         </div>
       </div>

@@ -27,11 +27,11 @@ const AboutPage = () => {
           <h2 className='text-2xl font-bold text-center break-words'>
             {siteConfig.author}
           </h2>
-          <p className='text-muted-foreground text-center break-words'>
+          <p className='text-foreground/75 text-center break-words'>
             Software Developer
           </p>
         </div>
-        <p className='text-muted-foreground text-lg py-4'>
+        <p className='text-foreground text-md py-4'>
           I am a software developer with a passion for building things that live
           on the internet. I achieved my Bachelor of Science in Computer Science
           from Purdue University in 2022, and have been working as a software

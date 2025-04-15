@@ -54,7 +54,7 @@ const TagPage = ({ params }: TagPageProps) => {
         </div>
       </div>
       <div className='space-y-2 mt-6'>
-        <p className='text-muted-foreground'>Topics</p>
+        <p className='text-foreground/75'>Topics</p>
         <div className='flex flex-wrap gap-2'>
           <Link
             className={badgeVariants({

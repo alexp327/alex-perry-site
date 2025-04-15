@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? siteConfig.url),
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
-};
+// export const viewport: Viewport = {
+//   themeColor: [
+//     { media: '(prefers-color-scheme: light)', color: 'white' },
+//     { media: '(prefers-color-scheme: dark)', color: 'black' },
+//   ],
+// };
 
 export default function RootLayout({
   children,
@@ -38,7 +38,7 @@ export default function RootLayout({
         <Providers>
           <div className='relative flex min-g-dvh flex-col bg-background'>
             <SiteHeader />
-            <main className='flex-1'>{children}</main>
+            <main className='w-full flex-1 max-w-5xl mx-auto'>{children}</main>
             <SiteFooter />
           </div>
         </Providers>
