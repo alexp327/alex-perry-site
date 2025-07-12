@@ -41,6 +41,8 @@
     "velite": "^0.2.2"
   },
   "overrides": {
-    "@babel/runtime": "7.24.4"
+    "@babel/runtime": "7.24.4",
+    "brace-expansion": "2.0.2"
   }
 }
+
