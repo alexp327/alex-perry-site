@@ -8,13 +8,15 @@ import { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import Tag from '@/components/tag';
 
+type Params = {
+  slug: string[];
+};
+
 interface PostPageProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<Params>;
 }
 
-async function getPostFromParams(params: PostPageProps['params']) {
+async function getPostFromParams(params: Params) {
   const slug = params?.slug?.join('/');
   const post = posts.find((post) => post.slugAsParams === slug);
 
@@ -24,7 +26,8 @@ async function getPostFromParams(params: PostPageProps['params']) {
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
-  const post = await getPostFromParams(params);
+  const resolvedParams = await params;
+  const post = await getPostFromParams(resolvedParams);
 
   if (!post) {
     return {};
@@ -60,14 +63,13 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<
-  PostPageProps['params'][]
-> {
+export async function generateStaticParams(): Promise<Params[]> {
   return posts.map((post) => ({ slug: post.slugAsParams.split('/') }));
 }
 
 const PostPage = async ({ params }: PostPageProps) => {
-  const post = await getPostFromParams(params);
+  const resolvedParams = await params;
+  const post = await getPostFromParams(resolvedParams);
 
   if (!post || !post.published) {
     notFound();

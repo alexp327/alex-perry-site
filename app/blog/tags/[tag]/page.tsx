@@ -11,15 +11,16 @@ import Link from 'next/link';
 import { badgeVariants } from '@/components/ui/badge';
 
 interface TagPageProps {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: TagPageProps): Promise<Metadata> {
-  const { tag } = params;
+  const resolvedParams = await params;
+  const { tag } = resolvedParams;
   return {
     title:
       `${siteConfig.name} | ` +
@@ -36,8 +37,9 @@ export const generateStaticParams = () => {
   return paths;
 };
 
-const TagPage = ({ params }: TagPageProps) => {
-  const { tag } = params;
+const TagPage = async ({ params }: TagPageProps) => {
+  const resolvedParams = await params;
+  const { tag } = resolvedParams;
   const title = tag.split('-').join(' ');
 
   const displayPosts = getPostsByTagSlug(posts, tag);
