@@ -48,7 +48,7 @@ export default function Home() {
               I&apos;m currently focused on building scalable, data-driven
               applications at Remodel Health. With a background in full-stack
               development and a product-focused mindset, I bring both technical
-              depth and a passion for practical innovation—whether at the
+              depth and a passion for practical innovation - whether at the
               enterprise level or through independent projects.
             </p>
             <div className='flex gap-4 justify-center md:justify-start flex-col sm:flex-row'>
