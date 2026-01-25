@@ -67,12 +67,11 @@ const WorkItem = ({
           ) : null}
         </div>
       </div>
-      <Image
+      <img
         src={`/work/${image}`}
         alt={'test alt description'}
         width={1400}
         height={800}
-        priority={priorityImg}
         className='w-full md:w-1/2 min-h-48 max-h-60 md:max-h-none object-cover overflow-hidden'
       />
     </article>

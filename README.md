@@ -20,6 +20,30 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Docker Setup
+
+This project includes Docker configurations for both development and production environments.
+
+### Development (with hot reloading)
+Run the development server in a Docker container with live code syncing:
+
+```bash
+npm run docker:dev
+```
+
+This uses `docker-compose.dev.yaml` and `Dockerfile.dev` for a development-optimized setup with volume mounting for hot reloading.
+
+### Production
+Build and run the production-optimized container:
+
+```bash
+npm run docker:prod
+```
+
+This uses `docker-compose.yaml` and `Dockerfile` for a multi-stage production build.
+
+Both commands will build the image if needed and start the container on `http://localhost:3000`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

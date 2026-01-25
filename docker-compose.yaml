@@ -1,13 +1,16 @@
-name: alex-site
+name: alex-site-prod
 
 services:
   client:
     build:
       context: ./
       dockerfile: Dockerfile
-    container_name: alex-client
+    container_name: alex-client-prod
     ports:
       - '3000:3000'
-    volumes:
-      - ./:/src
-
+    restart: unless-stopped
+    labels:
+      - homepage.group=Apps
+      - homepage.name=Alex Perry Site
+      - homepage.icon=nextjs
+      - homepage.href=http://your-server-ip:3000

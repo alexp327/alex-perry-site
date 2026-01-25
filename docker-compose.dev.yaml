@@ -1,0 +1,12 @@
+name: alex-site-dev
+
+services:
+  client:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    container_name: alex-client-dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/src

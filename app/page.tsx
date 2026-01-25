@@ -81,7 +81,7 @@ export default function Home() {
             <div className='absolute bottom-[5%] left-[7%] h-52 w-52 rounded-full bg-blue-500/70 blur-3xl' />
             <div className='absolute right-[5%] top-[10%] h-44 w-44 rounded-full bg-cyan-500/70 blur-3xl' />
             <div className='absolute right-[40%] top-[40%] h-32 w-32 rounded-full bg-orange-500/70 blur-3xl' />
-            <Image
+            <img
               src='/hero-image.png'
               alt=''
               width={500}
@@ -209,7 +209,7 @@ export default function Home() {
           <TechCard
             icon={<Code className='h-6 w-6' />}
             title='Full Stack Development'
-            description='Proficient in React, Next.js, Angular, Node.js, and ASP.NET for building scalable web apps'
+            description='Proficient in React, .NET Angular, and Node.js for building scalable web apps'
           />
           <TechCard
             icon={<SquareCode className='h-6 w-6' />}
