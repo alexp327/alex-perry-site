@@ -7,6 +7,7 @@ const nextConfig = {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
   },
+  turbopack: {}
 };
 
 export default nextConfig;
