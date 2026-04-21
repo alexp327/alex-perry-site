@@ -3,13 +3,11 @@ import { ImageResponse } from 'next/og';
 import { siteConfig } from '@/config/site';
 import { Icons } from '@/components/icons';
 
-const interBold = fetch(
-  new URL('../../../assets/fonts/Inter-Bold.ttf', import.meta.url),
-).then((res) => res.arrayBuffer());
-
 export async function GET(req: NextRequest) {
   try {
-    const fontBold = await interBold;
+    const fontBold = await fetch(
+      `${req.nextUrl.origin}/fonts/Inter-Bold.ttf`,
+    ).then((res) => res.arrayBuffer());
 
     const { searchParams } = req.nextUrl;
     const title = searchParams.get('title');
