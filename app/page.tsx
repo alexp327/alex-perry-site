@@ -56,7 +56,7 @@ export default function Home() {
                 href='/blog'
                 className={cn(
                   buttonVariants({ size: 'lg' }),
-                  'w-full sm:w-fit'
+                  'w-full sm:w-fit',
                 )}
               >
                 View my Blog
@@ -67,7 +67,7 @@ export default function Home() {
                 rel='noreferrer'
                 className={cn(
                   buttonVariants({ variant: 'outline', size: 'lg' }),
-                  'w-full sm:w-fit'
+                  'w-full sm:w-fit',
                 )}
               >
                 Github
@@ -209,7 +209,7 @@ export default function Home() {
           <TechCard
             icon={<Code className='h-6 w-6' />}
             title='Full Stack Development'
-            description='Proficient in React, Next.js, Angular, Node.js, and ASP.NET for building scalable web apps'
+            description='Proficient in React, Next.js, Angular, Node.js, and .NET for building scalable web apps'
           />
           <TechCard
             icon={<SquareCode className='h-6 w-6' />}
