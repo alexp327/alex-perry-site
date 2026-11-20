@@ -44,7 +44,7 @@
   },
   "overrides": {
     "@babel/runtime": "7.24.4",
-    "brace-expansion": "2.0.3",
+    "brace-expansion": "2.1.8",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
     "sharp": "0.35.5",
