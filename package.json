@@ -47,6 +47,7 @@
     "brace-expansion": "2.0.3",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "postcss-selector-parser": "6.1.6"
   }
 }
